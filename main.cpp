@@ -122,15 +122,11 @@ int main() {
     vector<Expense> expenses = readFromFile(fileName);
     short task;
     cout << "Enter the task number:\n"
-            "type '0' to exit\n '1' to input an expense to the file\n '2' to display all expenses sorted by date\n '3' to display the sum of all your expenses\n '4' to display all expenses in a specific category\n ";
-
+            "type '1' to input an expense to the file\n '2' to display all expenses sorted by date\n '3' to display the sum of all your expenses\n '4' to display all expenses in a specific category\n ";
+    char next;
     while (true) {
         cin >> task;
         switch (task) {
-            case 0: {
-                cout << "Goodbye, wishing you new expenses. :)" << endl;
-                return 0;
-            }
             case 1: {
                 Expense expense;
                 expense.input();
@@ -167,9 +163,23 @@ int main() {
             }
             default: {
                 cout << "Wrong task number! Please try again another task number." << endl;
+                break;
             }
         }
+        while (true) {
+            cout << "Would you like to continue? (y/n)";
+            cin >> next;
+            if (next == 'n') {
+                cout << "Thanks for using it, looking forward to your new expenses" << endl;
+                return 0;
+            } else if (next == 'y'){
+                break;
+            } else {
+                cout << "Wrong answer!!!";
+                continue;
+            }
+        }
+        cout << string(100, '\n');
         cout << "Enter the task number: ";
     }
-
 }
