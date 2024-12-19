@@ -1,3 +1,4 @@
 C:/Users/vladp/Desktop/xakaton/cmake-build-debug/CMakeFiles/xakaton.dir
+C:/Users/vladp/Desktop/xakaton/cmake-build-debug/CMakeFiles/main.dir
 C:/Users/vladp/Desktop/xakaton/cmake-build-debug/CMakeFiles/edit_cache.dir
 C:/Users/vladp/Desktop/xakaton/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -40,7 +40,6 @@ struct Expense {
         cin.ignore();
         getline(cin, description);
     }
-
 };
 
 
@@ -122,8 +121,8 @@ int main() {
 
     vector<Expense> expenses = readFromFile(fileName);
     short task;
-    cout << "Enter the task number (type '0' to exit, '1' to input an expense to the file, '2' to display all expenses sorted by date, "
-     << "'3' to display the sum of all your expenses, '4' to display all expenses in a specific category): ";
+    cout << "Enter the task number:\n"
+            "type '0' to exit\n '1' to input an expense to the file\n '2' to display all expenses sorted by date\n '3' to display the sum of all your expenses\n '4' to display all expenses in a specific category\n ";
 
     while (true) {
         cin >> task;

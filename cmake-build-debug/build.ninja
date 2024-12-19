@@ -51,7 +51,7 @@ build cmake_object_order_depends_target_xakaton: phony || .
 
 build CMakeFiles/xakaton.dir/main.cpp.obj: CXX_COMPILER__xakaton_unscanned_Debug C$:/Users/vladp/Desktop/xakaton/main.cpp || cmake_object_order_depends_target_xakaton
   DEP_FILE = CMakeFiles\xakaton.dir\main.cpp.obj.d
-  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  FLAGS = -static-libstdc++ -static-libgcc -g -std=gnu++20 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\xakaton.dir
   OBJECT_FILE_DIR = CMakeFiles\xakaton.dir
 
@@ -64,7 +64,7 @@ build CMakeFiles/xakaton.dir/main.cpp.obj: CXX_COMPILER__xakaton_unscanned_Debug
 # Link the executable xakaton.exe
 
 build xakaton.exe: CXX_EXECUTABLE_LINKER__xakaton_Debug CMakeFiles/xakaton.dir/main.cpp.obj
-  FLAGS = -g
+  FLAGS = -static-libstdc++ -static-libgcc -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\xakaton.dir
   POST_BUILD = cd .
@@ -72,6 +72,39 @@ build xakaton.exe: CXX_EXECUTABLE_LINKER__xakaton_Debug CMakeFiles/xakaton.dir/m
   TARGET_FILE = xakaton.exe
   TARGET_IMPLIB = libxakaton.dll.a
   TARGET_PDB = xakaton.exe.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target main
+
+
+#############################################
+# Order-only phony target for main
+
+build cmake_object_order_depends_target_main: phony || .
+
+build CMakeFiles/main.dir/main.cpp.obj: CXX_COMPILER__main_unscanned_Debug C$:/Users/vladp/Desktop/xakaton/main.cpp || cmake_object_order_depends_target_main
+  DEP_FILE = CMakeFiles\main.dir\main.cpp.obj.d
+  FLAGS = -static-libstdc++ -static-libgcc -g -std=gnu++20 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\main.dir
+  OBJECT_FILE_DIR = CMakeFiles\main.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target main
+
+
+#############################################
+# Link the executable main.exe
+
+build main.exe: CXX_EXECUTABLE_LINKER__main_Debug CMakeFiles/main.dir/main.cpp.obj
+  FLAGS = -static-libstdc++ -static-libgcc -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\main.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = main.exe
+  TARGET_IMPLIB = libmain.dll.a
+  TARGET_PDB = main.exe.dbg
 
 
 #############################################
@@ -99,6 +132,8 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 # Target aliases.
 
+build main: phony main.exe
+
 build xakaton: phony xakaton.exe
 
 # =============================================================================
@@ -109,7 +144,7 @@ build xakaton: phony xakaton.exe
 #############################################
 # Folder: C:/Users/vladp/Desktop/xakaton/cmake-build-debug
 
-build all: phony xakaton.exe
+build all: phony xakaton.exe main.exe
 
 # =============================================================================
 # Built-in targets
